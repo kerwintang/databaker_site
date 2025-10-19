@@ -22,6 +22,18 @@
       li {
         text-align: left;
       }
+
+      table {
+        width: 800px;
+        border-collapse: collapse;
+        border-spacing: 0px;
+      }
+
+      table tr td,th {
+        border:solid 1px black;
+        text-align: left;
+        padding:5px
+      }
     </style>
   </head>
   <body class="w3-light-grey">
@@ -37,13 +49,31 @@ and is wrapped around the whole page content, except for the footer in this exam
             <li>For testing large amounts of data</li>
             <li>For showing dummy data in your application</li>
           </ul>
+          <div>
+            <strong
+              >Existing datasets already generated and available for
+              use:</strong
+            >
+            <table>
+              <tr>
+                <th>Domain</th>
+                <th>Contents</th>
+                <th>DBs available</th>
+              </tr>
+              <tr>
+                <td>E-commerce data</td>
+                <td>1 million orders, 100,000 products, 10,000 users</td>
+                <td>MySQL, MongoDB</td>
+              </tr>
+            </table>
+          </div>
           <p>We can also create and customize data as you need.</p>
         </div>
       </header>
 
       <!-- Grid -->
       <div style="display: flex; align-items: center; flex-direction: column">
-        <p>Sign up below for early access!</p>
+        <p>Sign up below for early access or if you want sample data</p>
         <!-- Blog entries -->
         <div>
           <script src="https://sheetdb.io/s/f/4ufd1wj1ifhn6.js"></script>

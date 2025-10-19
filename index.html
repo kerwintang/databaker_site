@@ -18,6 +18,10 @@
       h5 {
         font-family: "Raleway", sans-serif;
       }
+
+      li {
+        text-align: left;
+      }
     </style>
   </head>
   <body class="w3-light-grey">
@@ -27,60 +31,22 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Header -->
       <header class="w3-container w3-center w3-padding-32">
         <h1><b>Data Baker</b></h1>
-        <p>We have a large collection of data sets that you can use</p>
+        <div style="display: flex; align-items: center; flex-direction: column">
+          <p>We have a large collection of data sets that you can use</p>
+          <ul>
+            <li>For testing large amounts of data</li>
+            <li>For showing dummy data in your application</li>
+          </ul>
+          <p>We can also create and customize data as you need.</p>
+        </div>
       </header>
 
       <!-- Grid -->
-      <div>
+      <div style="display: flex; align-items: center; flex-direction: column">
+        <p>Sign up below for early access!</p>
         <!-- Blog entries -->
         <div>
-          <form id="signup-form">
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <button type="submit">Sign Up</button>
-          </form>
-
-          <script>
-            const form = document.getElementById("signup-form");
-            form.addEventListener("submit", (e) => {
-              e.preventDefault();
-              fetch(
-                "https://script.google.com/macros/s/AKfycbxnjeGH5fIqAUU3ynNMaEIy4s72TbHAHnZ6bVWHZvtPgwqdHDIxeWBX8VwWiIbo8tQ/exec",
-                {
-                  method: "POST",
-                  mode: "cors",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    name: document.querySelector("#name").value,
-                    email: document.querySelector("#email").value,
-                  }),
-                }
-              )
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data);
-                  alert("Thanks for signing up!");
-                })
-                .catch((err) => {
-                  console.error("Error:", err);
-                  alert("Something went wrong. Please try again.");
-                });
-            });
-          </script>
+          <script src="https://sheetdb.io/s/f/4ufd1wj1ifhn6.js"></script>
         </div>
 
         <!-- END GRID -->

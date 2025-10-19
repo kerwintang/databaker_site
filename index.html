@@ -33,7 +33,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Grid -->
       <div>
         <!-- Blog entries -->
-        <div >
+        <div>
           <form id="signup-form">
             <input type="text" name="name" placeholder="Your Name" required />
             <input
@@ -54,15 +54,24 @@ and is wrapped around the whole page content, except for the footer in this exam
                 {
                   method: "POST",
                   mode: "cors",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
                   body: JSON.stringify({
-                    name: form.name.value,
-                    email: form.email.value,
+                    name: document.querySelector("#name").value,
+                    email: document.querySelector("#email").value,
                   }),
-                  headers: { "Content-Type": "application/json" },
                 }
               )
-                .then((res) => alert("Thanks for signing up!"))
-                .catch((err) => alert("Error: " + err.message));
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                  alert("Thanks for signing up!");
+                })
+                .catch((err) => {
+                  console.error("Error:", err);
+                  alert("Something went wrong. Please try again.");
+                });
             });
           </script>
         </div>
